@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Говийн аялал</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Serif:wght@600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a class="logo" href="#">Говийн аялал</a>
+      <p class="tagline">Монголын говиор явах замын тэмдэглэл</p>
+    </header>
+
+    <!-- NAVIGATION (Flexbox) -->
+    <nav class="main-nav" aria-label="Үндсэн цэс">
+      <ul class="nav-list">
+        <li><a class="nav-link is-active" href="#">Нүүр</a></li>
+        <li><a class="nav-link" href="#">Чиглэл</a></li>
+        <li><a class="nav-link" href="#">Зөвлөгөө</a></li>
+        <li><a class="nav-link" href="#">Галерей</a></li>
+        <li class="nav-push"><a class="nav-link nav-cta" href="#">Холбоо барих</a></li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT (Grid) -->
+    <main class="content">
+      <h1 class="section-title">Алдартай чиглэлүүд</h1>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-media media-1" role="img" aria-label="Хонгорын элс"></div>
+          <div class="card-body">
+            <h2 class="card-title">Хонгорын элс</h2>
+            <p class="card-text">Дуут элсний өндөр манхан, үдшийн алтлаг гэрэл.</p>
+            <span class="card-meta">3 өдөр</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media media-2" role="img" aria-label="Баянзаг"></div>
+          <div class="card-body">
+            <h2 class="card-title">Баянзаг</h2>
+            <p class="card-text">Саксаулын ой, улаан хаднууд дунд дайносаврын ул мөр.</p>
+            <span class="card-meta">2 өдөр</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media media-3" role="img" aria-label="Цагаан суваргa"></div>
+          <div class="card-body">
+            <h2 class="card-title">Цагаан суварга</h2>
+            <p class="card-text">Үе үеийн хурдас үлдээсэн цагаан хадан цохио.</p>
+            <span class="card-meta">1 өдөр</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media media-4" role="img" aria-label="Ёлын ам"></div>
+          <div class="card-body">
+            <h2 class="card-title">Ёлын ам</h2>
+            <p class="card-text">Зуны турш мөс хайлдаггүй нарийхан хавцал.</p>
+            <span class="card-meta">2 өдөр</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media media-5" role="img" aria-label="Эрдэнэ цогт"></div>
+          <div class="card-body">
+            <h2 class="card-title">Хавцгайт</h2>
+            <p class="card-text">Говийн сэрүүн агаар, жижиг уулын гүн нууруудтай.</p>
+            <span class="card-meta">2 өдөр</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media media-6" role="img" aria-label="Зүүн говь"></div>
+          <div class="card-body">
+            <h2 class="card-title">Зүүн говь</h2>
+            <p class="card-text">Өргөн тал, тэмээний сүрэг, дэлгэр од бүхий шөнө.</p>
+            <span class="card-meta">4 өдөр</span>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <section class="widget">
+        <h2 class="widget-title">Аяллын сар</h2>
+        <ul class="widget-list">
+          <li>5-р сар: цэцэглэлт</li>
+          <li>7-р сар: хамгийн халуун</li>
+          <li>9-р сар: тогтуун, цэлмэг</li>
+        </ul>
+      </section>
+
+      <section class="widget">
+        <h2 class="widget-title">Дагавал зохих</h2>
+        <ul class="widget-list">
+          <li>Усаа хоногт 3 литр тооцох</li>
+          <li>Нарны тос, малгай</li>
+          <li>Нэмэлт шатахуун</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- FOOTER (Flexbox) -->
+    <footer class="site-footer">
+      <p class="footer-copy">&copy; 2026 Говийн аялал</p>
+      <ul class="footer-links">
+        <li><a href="#">Нууцлал</a></li>
+        <li><a href="#">Тусламж</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </footer>
+
+  </div>
+</body>
+</html>
