@@ -1,1 +1,214 @@
+/* ---------- Хувьсагч ---------- */
+:root {
+  --sand: #f6efe2;
+  --paper: #fffaf0;
+  --ink: #2b2a28;
+  --muted: #6d675d;
+  --sky: #1d5c85;
+  --sky-dark: #123f5c;
+  --saffron: #e0a030;
+  --line: #e2d6bf;
+  --font-head: 'Noto Serif', serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ---------- Хуудасны ерөнхий layout (GRID) ----------
+   Нэрлэсэн талбарууд (grid-template-areas) ашиглана */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  grid-template-areas:
+    "header  header"
+    "nav     nav"
+    "content sidebar"
+    "footer  footer";
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.site-header { grid-area: header; }
+.main-nav    { grid-area: nav; }
+.content     { grid-area: content; }
+.sidebar     { grid-area: sidebar; }
+.site-footer { grid-area: footer; }
+
+/* ---------- Header ---------- */
+.site-header {
+  padding: 40px 0 8px;
+}
+.logo {
+  font-family: var(--font-head);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--sky-dark);
+}
+.tagline {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ---------- Navigation (FLEXBOX) ---------- */
+.main-nav {
+  background: var(--sky);
+  border-radius: 12px;
+  padding: 0 12px;
+}
+.nav-list {
+  display: flex;
+  align-items: center;            /* босоо тэнхлэгт төвлөрүүлэх */
+  gap: 8px;
+}
+.nav-link {
+  display: block;
+  padding: 14px 16px;
+  color: #fff;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+.nav-link:hover,
+.nav-link.is-active { border-bottom-color: var(--saffron); }
+
+.nav-push { margin-left: auto; }  /* сүүлийн зүйлийг баруун тийш түлхэнэ */
+.nav-cta {
+  background: var(--saffron);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 8px 16px;
+  border-bottom: none;
+}
+.nav-cta:hover { background: #eab454; border-bottom: none; }
+
+/* ---------- Үндсэн агуулга ---------- */
+.section-title {
+  font-family: var(--font-head);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Картын GRID: 3 багана */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: flex;                   /* карт дотор Flexbox: агуулгыг доош нь тэгшлэх */
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card-media {
+  height: 130px;
+}
+/* Зураг оронд өнгөт градиент */
+.media-1 { background: linear-gradient(160deg, #e8b765, #b8742a); }
+.media-2 { background: linear-gradient(160deg, #d6603a, #7a2e1b); }
+.media-3 { background: linear-gradient(160deg, #f3ecdc, #b9c6cf); }
+.media-4 { background: linear-gradient(160deg, #5d8fae, #1d3f55); }
+.media-5 { background: linear-gradient(160deg, #8fb08a, #3d6140); }
+.media-6 { background: linear-gradient(160deg, #e9d08a, #9c8a4e); }
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+.card-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+}
+.card-text {
+  color: var(--muted);
+  font-size: 14px;
+}
+.card-meta {
+  margin-top: auto;                /* "хугацаа" үргэлж картын доод талд */
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sky);
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: start;
+}
+.widget {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--saffron);
+  border-radius: 12px;
+  padding: 20px;
+}
+.widget-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.widget-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Footer (FLEXBOX) ---------- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;  /* хоёр захад нь байрлуулна */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+.footer-links a:hover { color: var(--sky); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "sidebar"
+      "footer";
+  }
+  .nav-list { flex-wrap: wrap; }
+  .nav-push { margin-left: 0; }
+  .card-grid { grid-template-columns: 1fr; }
+}
